@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans     
+        http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-4.0.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+         http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+        ">
+
+	<!-- Hibernate4 -->
+	<!-- 加载资源文件 其中包含变量信息，必须在Spring配置文件的最前面加载，即第一个加载 -->
+	<context:property-placeholder location="classpath:mysql.properties" />
+	<!-- 扫描service，dao，model层，不扫描controller层，否则事务出错 -->
+	<context:component-scan base-package="com.service" />
+	<context:component-scan base-package="com.dao" />
+	<context:component-scan base-package="com.model" />
+
+
+	<!-- 数据库映射 -->
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="${jdbc.driverClassName}" />
+		<property name="url" value="${jdbc.url}" />
+		<property name="username" value="${jdbc.user}" />
+		<property name="password" value="${jdbc.pass}" />
+	</bean>
+
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="packagesToScan">
+			<list>
+				<!-- 可以加多个包 -->
+				<value>com.model</value>
+			</list>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.hbm2ddl.auto">${hibernate.hbm2ddl.auto}</prop>
+				<prop key="hibernate.dialect">${hibernate.dialect}</prop>
+				<prop key="hibernate.show_sql">${hibernate.show_sql}</prop>
+			</props>
+		</property>
+	</bean>
+
+
+	<!-- 配置Hibernate事务管理器 -->
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<tx:annotation-driven transaction-manager="transactionManager" />
+	<!-- 配置事务异常封装 -->
+	<bean id="persistenceExceptionTranslationPostProcessor"
+		class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor" />
+
+	<!-- 声明式容器事务管理 ,transaction-manager指定事务管理器为transactionManager -->
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="get*" propagation="REQUIRED" />
+			<tx:method name="find*" propagation="REQUIRED" />
+			<tx:method name="add*" propagation="REQUIRED" />
+			<tx:method name="update*" propagation="REQUIRED" />
+			<tx:method name="save*" propagation="REQUIRED" />
+			<tx:method name="delete*" propagation="REQUIRED" />
+			<tx:method name="*" propagation="REQUIRED" />
+		</tx:attributes>
+	</tx:advice>
+
+	<aop:config expose-proxy="true">
+		<!-- 对业务逻辑层实施事务 -->
+		<aop:pointcut id="txPointcut"
+			expression="execution(* com.service.*Service.*(..))" />
+		<!-- 对数据库访问层实施事务 -->
+		<!-- <aop:pointcut id="txPointcut" expression="execution(* com.dao.*.*(..))" 
+			/> -->
+		<!-- Advisor定义，切入点和通知分别为txPointcut、txAdvice -->
+		<aop:advisor pointcut-ref="txPointcut" advice-ref="txAdvice" />
+	</aop:config>
+
+	<!-- 支持上传文件 -->
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver" />
+
+	<!-- 处理器映射器HandlerMapping -->
+	<!-- <bean
+		class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping" /> -->
+
+	<!-- 在实际开发中通常都需配置 mvc:annotation-driven标签,这个标签是开启注解 -->
+	<!-- <mvc:annotation-driven></mvc:annotation-driven> -->
+	<!-- 拦截器 -->
+	<mvc:interceptors>
+		<!-- 多个拦截器，顺序执行 -->
+				<!-- 登录拦截器 -->
+		<mvc:interceptor>
+			<mvc:mapping path="/shoppingCart/addToShoppingCart.do" />
+			<mvc:mapping path="/shoppingCart/find.do" />
+			<mvc:mapping path="/shoppingCart/findHTML.do" />
+			<mvc:mapping path="/user/userInfo.do" />
+			<mvc:mapping path="/collect/saveCollect.do"/>
+			<mvc:mapping path="/managerCenter.do"/>
+			<bean class="com.interceptor.LoginInterceptor"></bean>
+		</mvc:interceptor>
+		<!-- 管理员拦截器 -->
+		<mvc:interceptor>
+			<mvc:mapping path="/managerCenter.do"/>
+			<bean class="com.interceptor.ManagerInterceptor"></bean>
+		</mvc:interceptor>
+	<!-- 用户拦截器 -->
+		<mvc:interceptor>
+			<mvc:mapping path="/shoppingCart/addToShoppingCart.do" />
+			<mvc:mapping path="/shoppingCart/find.do" />
+			<mvc:mapping path="/shoppingCart/findHTML.do" />
+			<mvc:mapping path="/user/userInfo.do" />
+			<mvc:mapping path="/collect/saveCollect.do"/>
+			<bean class="com.interceptor.UserInterceptor"></bean>
+		</mvc:interceptor>
+	</mvc:interceptors>
+	
+	<bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+        <property name="basename" value="/WEB-INF/classes/messages"/>
+        <property name="cacheSeconds" value="0" />
+        <property name="defaultEncoding" value="UTF-8"/>
+    </bean>
+</beans>

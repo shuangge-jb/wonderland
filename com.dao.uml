@@ -1,0 +1,745 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_qb8akM37EdqwVrslYOdUDA" name="com.dao类图">
+  <packagedElement xmi:type="uml:Package" xmi:id="_wszd8ELHEeaMkIj4srOLbw" name="com">
+    <packagedElement xmi:type="uml:Package" xmi:id="_wszd8ULHEeaMkIj4srOLbw" name="dao">
+      <packagedElement xmi:type="uml:Interface" xmi:id="_wszd8kLHEeaMkIj4srOLbw" name="UserInfoDao">
+        <ownedComment xmi:id="_ws0sEELHEeaMkIj4srOLbw">
+          <body>/** 
+ * 处理用户信息
+ * @author modified by gjb on 6.25
+ */
+</body>
+        </ownedComment>
+        <ownedOperation xmi:id="_wvWboULHEeaMkIj4srOLbw" name="find" visibility="public">
+          <ownedParameter xmi:id="_wvWbokLHEeaMkIj4srOLbw" name="id">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_wvWbo0LHEeaMkIj4srOLbw" name="return" type="_wuMlGULHEeaMkIj4srOLbw" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_wvXCsULHEeaMkIj4srOLbw" name="getUserByName" visibility="public">
+          <ownedParameter xmi:id="_wvXCskLHEeaMkIj4srOLbw" name="username">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_wvXCs0LHEeaMkIj4srOLbw" name="return" type="_wuMlGULHEeaMkIj4srOLbw" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_wvXpwELHEeaMkIj4srOLbw" name="getPassword" visibility="public">
+          <ownedParameter xmi:id="_wvXpwULHEeaMkIj4srOLbw" name="username">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_wvXpwkLHEeaMkIj4srOLbw" name="return" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_wvXpw0LHEeaMkIj4srOLbw" name="delete" visibility="public">
+          <ownedParameter xmi:id="_wvXpxELHEeaMkIj4srOLbw" name="user" type="_wuMlGULHEeaMkIj4srOLbw"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_wvYQ0ELHEeaMkIj4srOLbw" name="saveUserInDb" visibility="public">
+          <ownedParameter xmi:id="_wvYQ0ULHEeaMkIj4srOLbw" name="userInfo" type="_wuMlGULHEeaMkIj4srOLbw"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_wvYQ0kLHEeaMkIj4srOLbw" name="getUserId" visibility="public">
+          <ownedParameter xmi:id="_wvYQ00LHEeaMkIj4srOLbw" name="username">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_wvYQ1ELHEeaMkIj4srOLbw" name="return" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_wvY34ELHEeaMkIj4srOLbw" name="update" visibility="public">
+          <ownedParameter xmi:id="_wvY34ULHEeaMkIj4srOLbw" name="userInfo" type="_wuMlGULHEeaMkIj4srOLbw"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_ws0sEULHEeaMkIj4srOLbw" name="BookNumDaoImpl" clientDependency="_wvY34kLHEeaMkIj4srOLbw">
+        <ownedAttribute xmi:id="_wvZe8ELHEeaMkIj4srOLbw" name="sessionFactory" visibility="private" type="_wuNMJELHEeaMkIj4srOLbw"/>
+        <interfaceRealization xmi:id="_wvY34kLHEeaMkIj4srOLbw" name="BookNumDao" supplier="_ws_EIELHEeaMkIj4srOLbw" client="_ws0sEULHEeaMkIj4srOLbw" contract="_ws_EIELHEeaMkIj4srOLbw"/>
+        <ownedOperation xmi:id="_wvaGAULHEeaMkIj4srOLbw" name="findById" visibility="public">
+          <ownedParameter xmi:id="_wvaGAkLHEeaMkIj4srOLbw" name="id">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_wvaGA0LHEeaMkIj4srOLbw" name="return" type="_wuNMJ0LHEeaMkIj4srOLbw" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_wvatEELHEeaMkIj4srOLbw" name="saveOrUpdate" visibility="public">
+          <ownedParameter xmi:id="_wvatEULHEeaMkIj4srOLbw" name="bookNum" type="_wuNMJ0LHEeaMkIj4srOLbw"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_wvbUIELHEeaMkIj4srOLbw" name="delete" visibility="public">
+          <ownedParameter xmi:id="_wvbUIULHEeaMkIj4srOLbw" name="id">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_ws1TIELHEeaMkIj4srOLbw" name="CollectInfoDao">
+        <ownedOperation xmi:id="_wvb7MELHEeaMkIj4srOLbw" name="findCollectBookInfo" visibility="public">
+          <ownedParameter xmi:id="_wvb7MULHEeaMkIj4srOLbw" name="userId">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_wvb7MkLHEeaMkIj4srOLbw" name="return" type="_wuMlEkLHEeaMkIj4srOLbw" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_wvciQELHEeaMkIj4srOLbw" name="deleteBookInCollect" visibility="public">
+          <ownedParameter xmi:id="_wvciQULHEeaMkIj4srOLbw" name="userId">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_wvciQkLHEeaMkIj4srOLbw" name="bookId">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_wvciQ0LHEeaMkIj4srOLbw" name="addBookToCollect" visibility="public">
+          <ownedParameter xmi:id="_wvciRELHEeaMkIj4srOLbw" name="collectInfo" type="_wuNzMULHEeaMkIj4srOLbw"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_wvdJUELHEeaMkIj4srOLbw" name="isBookHasCollected" visibility="public">
+          <ownedParameter xmi:id="_wvdJUULHEeaMkIj4srOLbw" name="bookId">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_wvdJUkLHEeaMkIj4srOLbw" name="userId">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_wvdJU0LHEeaMkIj4srOLbw" name="return" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_ws16MELHEeaMkIj4srOLbw" name="UserInfoDaoImpl" clientDependency="_wvdJVELHEeaMkIj4srOLbw">
+        <ownedComment xmi:id="_ws3IUELHEeaMkIj4srOLbw">
+          <body>/** 
+ * 不能使用HiernateDaoSupport,否则事务执行不了
+ * @author Administrator
+ */
+</body>
+        </ownedComment>
+        <ownedAttribute xmi:id="_wveXcELHEeaMkIj4srOLbw" name="sessionFactory" visibility="private" type="_wuNMJELHEeaMkIj4srOLbw"/>
+        <interfaceRealization xmi:id="_wvdJVELHEeaMkIj4srOLbw" name="UserInfoDao" supplier="_wszd8kLHEeaMkIj4srOLbw" client="_ws16MELHEeaMkIj4srOLbw" contract="_wszd8kLHEeaMkIj4srOLbw"/>
+        <ownedOperation xmi:id="_wvflkELHEeaMkIj4srOLbw" name="getSessionFactory" visibility="public">
+          <ownedComment xmi:id="_wvhawELHEeaMkIj4srOLbw">
+            <body>/** 
+ * @return the sessionFactory
+ */
+</body>
+          </ownedComment>
+          <ownedParameter xmi:id="_wvflkULHEeaMkIj4srOLbw" name="return" type="_wuNMJELHEeaMkIj4srOLbw" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_wviB0ELHEeaMkIj4srOLbw" name="setSessionFactory" visibility="public">
+          <ownedComment xmi:id="_wvjP8ELHEeaMkIj4srOLbw">
+            <body>/** 
+ * @param sessionFactory the sessionFactory to set
+ */
+</body>
+          </ownedComment>
+          <ownedParameter xmi:id="_wviB0ULHEeaMkIj4srOLbw" name="sessionFactory" type="_wuNMJELHEeaMkIj4srOLbw"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_wvjP8ULHEeaMkIj4srOLbw" name="getUserByName" visibility="public">
+          <ownedParameter xmi:id="_wvjP8kLHEeaMkIj4srOLbw" name="username">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_wvjP80LHEeaMkIj4srOLbw" name="return" type="_wuMlGULHEeaMkIj4srOLbw" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_wvlFIELHEeaMkIj4srOLbw" name="getPassword" visibility="public">
+          <ownedParameter xmi:id="_wvlFIULHEeaMkIj4srOLbw" name="username">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_wvlFIkLHEeaMkIj4srOLbw" name="return" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_wvnhYELHEeaMkIj4srOLbw" name="delete" visibility="public">
+          <ownedParameter xmi:id="_wvnhYULHEeaMkIj4srOLbw" name="user" type="_wuMlGULHEeaMkIj4srOLbw"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_wvpWkELHEeaMkIj4srOLbw" name="find" visibility="public">
+          <ownedParameter xmi:id="_wvpWkULHEeaMkIj4srOLbw" name="id">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_wvpWkkLHEeaMkIj4srOLbw" name="return" type="_wuMlGULHEeaMkIj4srOLbw" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_wvrLwELHEeaMkIj4srOLbw" name="saveUserInDb" visibility="public">
+          <ownedParameter xmi:id="_wvrLwULHEeaMkIj4srOLbw" name="userInfo" type="_wuMlGULHEeaMkIj4srOLbw"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_wvtA8ELHEeaMkIj4srOLbw" name="getUserId" visibility="public">
+          <ownedParameter xmi:id="_wvtA8ULHEeaMkIj4srOLbw" name="username">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_wvtA8kLHEeaMkIj4srOLbw" name="return" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_wvvdMELHEeaMkIj4srOLbw" name="update" visibility="public">
+          <ownedParameter xmi:id="_wvvdMULHEeaMkIj4srOLbw" name="userInfo" type="_wuMlGULHEeaMkIj4srOLbw"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_ws3IUULHEeaMkIj4srOLbw" name="ReviewInfoDaoImpl" clientDependency="_wvxSYELHEeaMkIj4srOLbw">
+        <ownedAttribute xmi:id="_wvzHkELHEeaMkIj4srOLbw" name="sessionFactory" visibility="private" type="_wuNMJELHEeaMkIj4srOLbw"/>
+        <interfaceRealization xmi:id="_wvxSYELHEeaMkIj4srOLbw" name="ReviewInfoDao" supplier="_ws6LoELHEeaMkIj4srOLbw" client="_ws3IUULHEeaMkIj4srOLbw" contract="_ws6LoELHEeaMkIj4srOLbw"/>
+        <ownedOperation xmi:id="_wvzuoELHEeaMkIj4srOLbw" name="getSessionFactory" visibility="public">
+          <ownedComment xmi:id="_wv1j0ELHEeaMkIj4srOLbw">
+            <body>/** 
+ * @return the sessionFactory
+ */
+</body>
+          </ownedComment>
+          <ownedParameter xmi:id="_wvzuoULHEeaMkIj4srOLbw" name="return" type="_wuNMJELHEeaMkIj4srOLbw" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_wv2K4ELHEeaMkIj4srOLbw" name="setSessionFactory" visibility="public">
+          <ownedComment xmi:id="_wv3ZAELHEeaMkIj4srOLbw">
+            <body>/** 
+ * @param sessionFactory the sessionFactory to set
+ */
+</body>
+          </ownedComment>
+          <ownedParameter xmi:id="_wv2K4ULHEeaMkIj4srOLbw" name="sessionFactory" type="_wuNMJELHEeaMkIj4srOLbw"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_wv3ZAULHEeaMkIj4srOLbw" name="findById" visibility="public">
+          <ownedParameter xmi:id="_wv3ZAkLHEeaMkIj4srOLbw" name="id">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_wv3ZA0LHEeaMkIj4srOLbw" name="return" type="_wuMlEkLHEeaMkIj4srOLbw" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_wv5OMELHEeaMkIj4srOLbw" name="saveReviewInfoInDB" visibility="public">
+          <ownedParameter xmi:id="_wv5OMULHEeaMkIj4srOLbw" name="reviewInfo" type="_wuQPcELHEeaMkIj4srOLbw"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_wv7DYELHEeaMkIj4srOLbw" name="deleteReviewInfoInById" visibility="public">
+          <ownedParameter xmi:id="_wv7DYULHEeaMkIj4srOLbw" name="id">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_wv84kELHEeaMkIj4srOLbw" name="findByBookId" visibility="public">
+          <ownedParameter xmi:id="_wv84kULHEeaMkIj4srOLbw" name="bookId">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_wv84kkLHEeaMkIj4srOLbw" name="return" type="_wuMlEkLHEeaMkIj4srOLbw" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_wv-twELHEeaMkIj4srOLbw" name="getBookNumByBookId" visibility="public">
+          <ownedParameter xmi:id="_wv-twULHEeaMkIj4srOLbw" name="bookId">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_wv-twkLHEeaMkIj4srOLbw" name="return" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_ws4WckLHEeaMkIj4srOLbw" name="OrderInfoDaoImp" clientDependency="_wwAi80LHEeaMkIj4srOLbw">
+        <ownedAttribute xmi:id="_wwBxEELHEeaMkIj4srOLbw" name="sessionFactory" visibility="private" type="_wuNMJELHEeaMkIj4srOLbw"/>
+        <interfaceRealization xmi:id="_wwAi80LHEeaMkIj4srOLbw" name="OrderInfoDao" supplier="_ws_rMULHEeaMkIj4srOLbw" client="_ws4WckLHEeaMkIj4srOLbw" contract="_ws_rMULHEeaMkIj4srOLbw"/>
+        <ownedOperation xmi:id="_wwC_MELHEeaMkIj4srOLbw" name="findAll" visibility="public">
+          <ownedParameter xmi:id="_wwC_MULHEeaMkIj4srOLbw" name="userId">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_wwC_MkLHEeaMkIj4srOLbw" name="return" type="_wuMlEkLHEeaMkIj4srOLbw" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_wwENUELHEeaMkIj4srOLbw" name="saveOrUpdate" visibility="public">
+          <ownedParameter xmi:id="_wwENUULHEeaMkIj4srOLbw" name="orderInfo" type="_wuRdkELHEeaMkIj4srOLbw"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_wwGCgELHEeaMkIj4srOLbw" name="delete" visibility="public">
+          <ownedParameter xmi:id="_wwGCgULHEeaMkIj4srOLbw" name="orederInfo" type="_wuRdkELHEeaMkIj4srOLbw"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_wwGpkELHEeaMkIj4srOLbw" name="findById" visibility="public">
+          <ownedParameter xmi:id="_wwGpkULHEeaMkIj4srOLbw" name="id">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_wwGpkkLHEeaMkIj4srOLbw" name="return" type="_wuRdkELHEeaMkIj4srOLbw" direction="return"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_ws49gELHEeaMkIj4srOLbw" name="BookInfoDao">
+        <ownedComment xmi:id="_ws5kkELHEeaMkIj4srOLbw">
+          <body>/** 
+ * 处理书的信息
+ * @author modified by gjb on 6.25
+ */
+</body>
+        </ownedComment>
+        <ownedOperation xmi:id="_wwH3sELHEeaMkIj4srOLbw" name="findAll" visibility="public">
+          <ownedParameter xmi:id="_wwH3sULHEeaMkIj4srOLbw" name="return" type="_wuMlEkLHEeaMkIj4srOLbw" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_wwH3skLHEeaMkIj4srOLbw" name="findLike" visibility="public">
+          <ownedParameter xmi:id="_wwH3s0LHEeaMkIj4srOLbw" name="keyword">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_wwH3tELHEeaMkIj4srOLbw" name="return" type="_wuMlEkLHEeaMkIj4srOLbw" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_wwH3tULHEeaMkIj4srOLbw" name="findLike" visibility="public">
+          <ownedParameter xmi:id="_wwH3tkLHEeaMkIj4srOLbw" name="keyword">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_wwH3t0LHEeaMkIj4srOLbw" name="bookFirstType">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_wwH3uELHEeaMkIj4srOLbw" name="return" type="_wuMlEkLHEeaMkIj4srOLbw" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_wwIewELHEeaMkIj4srOLbw" name="findByType" visibility="public">
+          <ownedParameter xmi:id="_wwIewULHEeaMkIj4srOLbw" name="type">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_wwIewkLHEeaMkIj4srOLbw" name="return" type="_wuMlEkLHEeaMkIj4srOLbw" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_wwIew0LHEeaMkIj4srOLbw" name="find" visibility="public">
+          <ownedParameter xmi:id="_wwIexELHEeaMkIj4srOLbw" name="id">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_wwIexULHEeaMkIj4srOLbw" name="return" type="_wuNzMELHEeaMkIj4srOLbw" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_wwIexkLHEeaMkIj4srOLbw" name="delete" visibility="public">
+          <ownedParameter xmi:id="_wwIex0LHEeaMkIj4srOLbw" name="bookInfo" type="_wuNzMELHEeaMkIj4srOLbw"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_wwJF0ELHEeaMkIj4srOLbw" name="saveBookInDb" visibility="public">
+          <ownedParameter xmi:id="_wwJF0ULHEeaMkIj4srOLbw" name="bookInfo" type="_wuNzMELHEeaMkIj4srOLbw"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_wwJF0kLHEeaMkIj4srOLbw" name="isBookExistInDb" visibility="public">
+          <ownedParameter xmi:id="_wwJF00LHEeaMkIj4srOLbw" name="bookName">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_wwJF1ELHEeaMkIj4srOLbw" name="return" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_wwJF1ULHEeaMkIj4srOLbw" name="findBookFirstType" visibility="public">
+          <ownedParameter xmi:id="_wwJF1kLHEeaMkIj4srOLbw" name="return" type="_wuMlEkLHEeaMkIj4srOLbw" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_wwJs4ELHEeaMkIj4srOLbw" name="update" visibility="public">
+          <ownedParameter xmi:id="_wwJs4ULHEeaMkIj4srOLbw" name="bookInfo" type="_wuNzMELHEeaMkIj4srOLbw"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_ws6LoELHEeaMkIj4srOLbw" name="ReviewInfoDao">
+        <ownedComment xmi:id="_ws6LoULHEeaMkIj4srOLbw">
+          <body>/** 
+ * ��������
+ * @author created by gjb on 6.25
+ */
+</body>
+        </ownedComment>
+        <ownedOperation xmi:id="_wwJs4kLHEeaMkIj4srOLbw" name="findById" visibility="public">
+          <ownedParameter xmi:id="_wwJs40LHEeaMkIj4srOLbw" name="id">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_wwJs5ELHEeaMkIj4srOLbw" name="return" type="_wuMlEkLHEeaMkIj4srOLbw" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_wwJs5ULHEeaMkIj4srOLbw" name="findByBookId" visibility="public">
+          <ownedParameter xmi:id="_wwJs5kLHEeaMkIj4srOLbw" name="bookId">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_wwJs50LHEeaMkIj4srOLbw" name="return" type="_wuMlEkLHEeaMkIj4srOLbw" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_wwKT8ELHEeaMkIj4srOLbw" name="saveReviewInfoInDB" visibility="public">
+          <ownedParameter xmi:id="_wwKT8ULHEeaMkIj4srOLbw" name="reviewInfo" type="_wuQPcELHEeaMkIj4srOLbw"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_wwKT8kLHEeaMkIj4srOLbw" name="deleteReviewInfoInById" visibility="public">
+          <ownedParameter xmi:id="_wwKT80LHEeaMkIj4srOLbw" name="id">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_wwK7AELHEeaMkIj4srOLbw" name="getBookNumByBookId" visibility="public">
+          <ownedParameter xmi:id="_wwK7AULHEeaMkIj4srOLbw" name="bookId">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_wwK7AkLHEeaMkIj4srOLbw" name="return" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_ws6ysELHEeaMkIj4srOLbw" name="ShoppingCartDaoImpl" clientDependency="_wwK7A0LHEeaMkIj4srOLbw">
+        <ownedComment xmi:id="_ws7ZwELHEeaMkIj4srOLbw">
+          <body>/** 
+ * 访问购物车数据表的实现类 created by gjb on 6.26
+ * @author gjb
+ */
+</body>
+        </ownedComment>
+        <ownedAttribute xmi:id="_wwMJIELHEeaMkIj4srOLbw" name="sessionFactory" visibility="private" type="_wuNMJELHEeaMkIj4srOLbw"/>
+        <interfaceRealization xmi:id="_wwK7A0LHEeaMkIj4srOLbw" name="ShoppingCartDao" supplier="_ws_EIULHEeaMkIj4srOLbw" client="_ws6ysELHEeaMkIj4srOLbw" contract="_ws_EIULHEeaMkIj4srOLbw"/>
+        <ownedOperation xmi:id="_wwNXQELHEeaMkIj4srOLbw" name="getSessionFactory" visibility="public">
+          <ownedComment xmi:id="_wwPMcELHEeaMkIj4srOLbw">
+            <body>/** 
+ * @return the sessionFactory
+ */
+</body>
+          </ownedComment>
+          <ownedParameter xmi:id="_wwNXQULHEeaMkIj4srOLbw" name="return" type="_wuNMJELHEeaMkIj4srOLbw" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_wwPMcULHEeaMkIj4srOLbw" name="setSessionFactory" visibility="public">
+          <ownedComment xmi:id="_wwQakELHEeaMkIj4srOLbw">
+            <body>/** 
+ * @param sessionFactory the sessionFactory to set
+ */
+</body>
+          </ownedComment>
+          <ownedParameter xmi:id="_wwPMckLHEeaMkIj4srOLbw" name="sessionFactory" type="_wuNMJELHEeaMkIj4srOLbw"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_wwRBoELHEeaMkIj4srOLbw" name="findByUserId" visibility="public">
+          <ownedParameter xmi:id="_wwRBoULHEeaMkIj4srOLbw" name="userId">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_wwRBokLHEeaMkIj4srOLbw" name="return" type="_wuMlEkLHEeaMkIj4srOLbw" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_wwSPwELHEeaMkIj4srOLbw" name="add" visibility="public">
+          <ownedParameter xmi:id="_wwSPwULHEeaMkIj4srOLbw" name="cart" type="_wuSrsELHEeaMkIj4srOLbw"/>
+          <ownedParameter xmi:id="_wwSPwkLHEeaMkIj4srOLbw" name="return" type="_wuSEoULHEeaMkIj4srOLbw" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_wwUE8ELHEeaMkIj4srOLbw" name="delete" visibility="public">
+          <ownedParameter xmi:id="_wwUE8ULHEeaMkIj4srOLbw" name="cart" type="_wuSrsELHEeaMkIj4srOLbw"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_wwVTEELHEeaMkIj4srOLbw" name="find" visibility="public">
+          <ownedParameter xmi:id="_wwVTEULHEeaMkIj4srOLbw" name="userId">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_wwVTEkLHEeaMkIj4srOLbw" name="bookId">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_wwVTE0LHEeaMkIj4srOLbw" name="return" type="_wuSrsELHEeaMkIj4srOLbw" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_wwWhMELHEeaMkIj4srOLbw" name="update" visibility="public">
+          <ownedParameter xmi:id="_wwWhMULHEeaMkIj4srOLbw" name="cart" type="_wuSrsELHEeaMkIj4srOLbw"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_wwY9cELHEeaMkIj4srOLbw" name="deleteAll" visibility="public">
+          <ownedParameter xmi:id="_wwY9cULHEeaMkIj4srOLbw" name="userId">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_ws7ZwULHEeaMkIj4srOLbw" name="AddressDaoImpl" clientDependency="_wwayoELHEeaMkIj4srOLbw">
+        <ownedComment xmi:id="_ws8A0ELHEeaMkIj4srOLbw">
+          <body>/** 
+ * @author Fang
+ */
+</body>
+        </ownedComment>
+        <ownedAttribute xmi:id="_wwcAwELHEeaMkIj4srOLbw" name="sessionFactory" visibility="private" type="_wuNMJELHEeaMkIj4srOLbw"/>
+        <interfaceRealization xmi:id="_wwayoELHEeaMkIj4srOLbw" name="AddressDao" supplier="_ws4WcELHEeaMkIj4srOLbw" client="_ws7ZwULHEeaMkIj4srOLbw" contract="_ws4WcELHEeaMkIj4srOLbw"/>
+        <ownedOperation xmi:id="_wwd18ELHEeaMkIj4srOLbw" name="saveOrUpdate" visibility="public">
+          <ownedParameter xmi:id="_wwd18ULHEeaMkIj4srOLbw" name="address" type="_wuQ2gELHEeaMkIj4srOLbw"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_wwfrIELHEeaMkIj4srOLbw" name="delete" visibility="public">
+          <ownedParameter xmi:id="_wwfrIULHEeaMkIj4srOLbw" name="adress" type="_wuQ2gELHEeaMkIj4srOLbw"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_wwhgUELHEeaMkIj4srOLbw" name="findAll" visibility="public">
+          <ownedParameter xmi:id="_wwhgUULHEeaMkIj4srOLbw" name="userId">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_wwhgUkLHEeaMkIj4srOLbw" name="return" type="_wuMlEkLHEeaMkIj4srOLbw" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_wwjVgELHEeaMkIj4srOLbw" name="find" visibility="public">
+          <ownedParameter xmi:id="_wwjVgULHEeaMkIj4srOLbw" name="id">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_wwjVgkLHEeaMkIj4srOLbw" name="return" type="_wuQ2gELHEeaMkIj4srOLbw" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_wwkjoELHEeaMkIj4srOLbw" name="getSessionFactory" visibility="public">
+          <ownedParameter xmi:id="_wwkjoULHEeaMkIj4srOLbw" name="return" type="_wuNMJELHEeaMkIj4srOLbw" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_wwlKsELHEeaMkIj4srOLbw" name="setSessionFactory" visibility="public">
+          <ownedParameter xmi:id="_wwlKsULHEeaMkIj4srOLbw" name="sessionFactory" type="_wuNMJELHEeaMkIj4srOLbw"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_ws8n4ELHEeaMkIj4srOLbw" name="CollectInfoDaoImpl" clientDependency="_wwmY0ELHEeaMkIj4srOLbw">
+        <ownedComment xmi:id="_ws9O8ELHEeaMkIj4srOLbw">
+          <body>/** 
+ * 收藏夹的实现类   whx
+ * @author Administrator
+ */
+</body>
+        </ownedComment>
+        <ownedAttribute xmi:id="_wwnm8ELHEeaMkIj4srOLbw" name="sessionFactory" visibility="private" type="_wuNMJELHEeaMkIj4srOLbw"/>
+        <interfaceRealization xmi:id="_wwmY0ELHEeaMkIj4srOLbw" name="CollectInfoDao" supplier="_ws1TIELHEeaMkIj4srOLbw" client="_ws8n4ELHEeaMkIj4srOLbw" contract="_ws1TIELHEeaMkIj4srOLbw"/>
+        <ownedOperation xmi:id="_wwpcIELHEeaMkIj4srOLbw" name="getSessionFactory" visibility="public">
+          <ownedParameter xmi:id="_wwpcIULHEeaMkIj4srOLbw" name="return" type="_wuNMJELHEeaMkIj4srOLbw" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_wwrRUELHEeaMkIj4srOLbw" name="setSessionFactory" visibility="public">
+          <ownedParameter xmi:id="_wwrRUULHEeaMkIj4srOLbw" name="sessionFactory" type="_wuNMJELHEeaMkIj4srOLbw"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_wwsfcELHEeaMkIj4srOLbw" name="findCollectBookInfo" visibility="public">
+          <ownedParameter xmi:id="_wwsfcULHEeaMkIj4srOLbw" name="userId">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_wwsfckLHEeaMkIj4srOLbw" name="return" type="_wuMlEkLHEeaMkIj4srOLbw" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_wwu7sELHEeaMkIj4srOLbw" name="deleteBookInCollect" visibility="public">
+          <ownedParameter xmi:id="_wwu7sULHEeaMkIj4srOLbw" name="userId">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_wwu7skLHEeaMkIj4srOLbw" name="bookId">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_wwww4ELHEeaMkIj4srOLbw" name="addBookToCollect" visibility="public">
+          <ownedParameter xmi:id="_wwww4ULHEeaMkIj4srOLbw" name="collectInfo" type="_wuNzMULHEeaMkIj4srOLbw"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_wwzNIELHEeaMkIj4srOLbw" name="isBookHasCollected" visibility="public">
+          <ownedParameter xmi:id="_wwzNIULHEeaMkIj4srOLbw" name="bookId">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_wwzNIkLHEeaMkIj4srOLbw" name="userId">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_wwzNI0LHEeaMkIj4srOLbw" name="return" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_ws92AELHEeaMkIj4srOLbw" name="BookInfoDaoImpl" clientDependency="_ww1CUELHEeaMkIj4srOLbw">
+        <ownedAttribute xmi:id="_ww2QcELHEeaMkIj4srOLbw" name="sessionFactory" visibility="private" type="_wuNMJELHEeaMkIj4srOLbw"/>
+        <interfaceRealization xmi:id="_ww1CUELHEeaMkIj4srOLbw" name="BookInfoDao" supplier="_ws49gELHEeaMkIj4srOLbw" client="_ws92AELHEeaMkIj4srOLbw" contract="_ws49gELHEeaMkIj4srOLbw"/>
+        <ownedOperation xmi:id="_ww4FoELHEeaMkIj4srOLbw" name="getSessionFactory" visibility="public">
+          <ownedComment xmi:id="_ww560ELHEeaMkIj4srOLbw">
+            <body>/** 
+ * @return the sessionFactory
+ */
+</body>
+          </ownedComment>
+          <ownedParameter xmi:id="_ww4FoULHEeaMkIj4srOLbw" name="return" type="_wuNMJELHEeaMkIj4srOLbw" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_ww6h4ELHEeaMkIj4srOLbw" name="setSessionFactory" visibility="public">
+          <ownedComment xmi:id="_ww8XEELHEeaMkIj4srOLbw">
+            <body>/** 
+ * @param sessionFactory the sessionFactory to set
+ */
+</body>
+          </ownedComment>
+          <ownedParameter xmi:id="_ww6h4ULHEeaMkIj4srOLbw" name="sessionFactory" type="_wuNMJELHEeaMkIj4srOLbw"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_ww8XEULHEeaMkIj4srOLbw" name="findAll" visibility="public">
+          <ownedComment xmi:id="_ww-MQELHEeaMkIj4srOLbw">
+            <body>/** 
+ * 找出所有书的信息 created by gjb
+ */
+</body>
+          </ownedComment>
+          <ownedParameter xmi:id="_ww8XEkLHEeaMkIj4srOLbw" name="return" type="_wuMlEkLHEeaMkIj4srOLbw" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_ww-zUELHEeaMkIj4srOLbw" name="findLike" visibility="public">
+          <ownedComment xmi:id="_wxAogELHEeaMkIj4srOLbw">
+            <body>/** 
+ * 模糊搜索出含有该关键词的商品 created by gjb
+ * @return
+ */
+</body>
+          </ownedComment>
+          <ownedParameter xmi:id="_ww-zUULHEeaMkIj4srOLbw" name="keyword">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_ww-zUkLHEeaMkIj4srOLbw" name="return" type="_wuMlEkLHEeaMkIj4srOLbw" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_wxAogULHEeaMkIj4srOLbw" name="findByType" visibility="public">
+          <ownedComment xmi:id="_wxCdsELHEeaMkIj4srOLbw">
+            <body>/** 
+ * 找出所有该分类下的商品 created by gjb
+ * @return
+ */
+</body>
+          </ownedComment>
+          <ownedParameter xmi:id="_wxAogkLHEeaMkIj4srOLbw" name="type">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_wxAog0LHEeaMkIj4srOLbw" name="return" type="_wuMlEkLHEeaMkIj4srOLbw" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_wxDEwELHEeaMkIj4srOLbw" name="find" visibility="public">
+          <ownedParameter xmi:id="_wxDEwULHEeaMkIj4srOLbw" name="id">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_wxDEwkLHEeaMkIj4srOLbw" name="return" type="_wuNzMELHEeaMkIj4srOLbw" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_wxFhAELHEeaMkIj4srOLbw" name="delete" visibility="public">
+          <ownedParameter xmi:id="_wxFhAULHEeaMkIj4srOLbw" name="bookInfo" type="_wuNzMELHEeaMkIj4srOLbw"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_wxHWMELHEeaMkIj4srOLbw" name="saveBookInDb" visibility="public">
+          <ownedComment xmi:id="_wxJLYELHEeaMkIj4srOLbw">
+            <body>/** 
+ * 管理员上传商品 whx
+ */
+</body>
+          </ownedComment>
+          <ownedParameter xmi:id="_wxHWMULHEeaMkIj4srOLbw" name="bookInfo" type="_wuNzMELHEeaMkIj4srOLbw"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_wxJycELHEeaMkIj4srOLbw" name="isBookExistInDb" visibility="public">
+          <ownedComment xmi:id="_wxLAkELHEeaMkIj4srOLbw">
+            <body>/** 
+ * 检验书是否已存在数据库 whx
+ */
+</body>
+          </ownedComment>
+          <ownedParameter xmi:id="_wxJycULHEeaMkIj4srOLbw" name="bookName">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_wxJyckLHEeaMkIj4srOLbw" name="return" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_wxLnoELHEeaMkIj4srOLbw" name="findLike" visibility="public">
+          <ownedParameter xmi:id="_wxLnoULHEeaMkIj4srOLbw" name="keyword">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_wxLnokLHEeaMkIj4srOLbw" name="bookFirstType">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_wxLno0LHEeaMkIj4srOLbw" name="return" type="_wuMlEkLHEeaMkIj4srOLbw" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_wxM1wELHEeaMkIj4srOLbw" name="findBookFirstType" visibility="public">
+          <ownedParameter xmi:id="_wxM1wULHEeaMkIj4srOLbw" name="return" type="_wuMlEkLHEeaMkIj4srOLbw" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_wxOq8ELHEeaMkIj4srOLbw" name="update" visibility="public">
+          <ownedParameter xmi:id="_wxOq8ULHEeaMkIj4srOLbw" name="bookInfo" type="_wuNzMELHEeaMkIj4srOLbw"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_ws_EIELHEeaMkIj4srOLbw" name="BookNumDao">
+        <ownedOperation xmi:id="_wxP5EELHEeaMkIj4srOLbw" name="findById" visibility="public">
+          <ownedParameter xmi:id="_wxP5EULHEeaMkIj4srOLbw" name="id">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_wxP5EkLHEeaMkIj4srOLbw" name="return" type="_wuNMJ0LHEeaMkIj4srOLbw" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_wxP5E0LHEeaMkIj4srOLbw" name="saveOrUpdate" visibility="public">
+          <ownedParameter xmi:id="_wxP5FELHEeaMkIj4srOLbw" name="bookNum" type="_wuNMJ0LHEeaMkIj4srOLbw"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_wxP5FULHEeaMkIj4srOLbw" name="delete" visibility="public">
+          <ownedParameter xmi:id="_wxP5FkLHEeaMkIj4srOLbw" name="id">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_ws_EIULHEeaMkIj4srOLbw" name="ShoppingCartDao">
+        <ownedComment xmi:id="_ws_rMELHEeaMkIj4srOLbw">
+          <body>/** 
+ * 处理购物车信息     created by gjb on 6.26
+ * @author gjb
+ */
+</body>
+        </ownedComment>
+        <ownedOperation xmi:id="_wxQgIELHEeaMkIj4srOLbw" name="findByUserId" visibility="public">
+          <ownedParameter xmi:id="_wxQgIULHEeaMkIj4srOLbw" name="userId">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_wxQgIkLHEeaMkIj4srOLbw" name="return" type="_wuMlEkLHEeaMkIj4srOLbw" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_wxQgI0LHEeaMkIj4srOLbw" name="find" visibility="public">
+          <ownedParameter xmi:id="_wxQgJELHEeaMkIj4srOLbw" name="userId">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_wxQgJULHEeaMkIj4srOLbw" name="bookId">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_wxQgJkLHEeaMkIj4srOLbw" name="return" type="_wuSrsELHEeaMkIj4srOLbw" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_wxQgJ0LHEeaMkIj4srOLbw" name="add" visibility="public">
+          <ownedParameter xmi:id="_wxQgKELHEeaMkIj4srOLbw" name="cart" type="_wuSrsELHEeaMkIj4srOLbw"/>
+          <ownedParameter xmi:id="_wxQgKULHEeaMkIj4srOLbw" name="return" type="_wuSEoULHEeaMkIj4srOLbw" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_wxRHMELHEeaMkIj4srOLbw" name="delete" visibility="public">
+          <ownedParameter xmi:id="_wxRHMULHEeaMkIj4srOLbw" name="cart" type="_wuSrsELHEeaMkIj4srOLbw"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_wxRHMkLHEeaMkIj4srOLbw" name="update" visibility="public">
+          <ownedParameter xmi:id="_wxRHM0LHEeaMkIj4srOLbw" name="cart" type="_wuSrsELHEeaMkIj4srOLbw"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_wxRHNELHEeaMkIj4srOLbw" name="deleteAll" visibility="public">
+          <ownedParameter xmi:id="_wxRHNULHEeaMkIj4srOLbw" name="userId">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_ws_rMULHEeaMkIj4srOLbw" name="OrderInfoDao">
+        <ownedComment xmi:id="_wtASQELHEeaMkIj4srOLbw">
+          <body>/** 
+ * @author Fang
+ */
+</body>
+        </ownedComment>
+        <ownedOperation xmi:id="_wxRuQELHEeaMkIj4srOLbw" name="findAll" visibility="public">
+          <ownedParameter xmi:id="_wxRuQULHEeaMkIj4srOLbw" name="userID">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_wxRuQkLHEeaMkIj4srOLbw" name="return" type="_wuMlEkLHEeaMkIj4srOLbw" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_wxRuQ0LHEeaMkIj4srOLbw" name="saveOrUpdate" visibility="public">
+          <ownedParameter xmi:id="_wxRuRELHEeaMkIj4srOLbw" name="orderInfo" type="_wuRdkELHEeaMkIj4srOLbw"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_wxRuRULHEeaMkIj4srOLbw" name="delete" visibility="public">
+          <ownedParameter xmi:id="_wxRuRkLHEeaMkIj4srOLbw" name="orederInfo" type="_wuRdkELHEeaMkIj4srOLbw"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_wxSVUELHEeaMkIj4srOLbw" name="findById" visibility="public">
+          <ownedParameter xmi:id="_wxSVUULHEeaMkIj4srOLbw" name="id">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_wxSVUkLHEeaMkIj4srOLbw" name="return" type="_wuRdkELHEeaMkIj4srOLbw" direction="return"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_ws4WcELHEeaMkIj4srOLbw" name="AddressDao">
+        <ownedComment xmi:id="_ws4WcULHEeaMkIj4srOLbw">
+          <body>/** 
+ * @author Fang
+ */
+</body>
+        </ownedComment>
+        <ownedOperation xmi:id="_wv_74ELHEeaMkIj4srOLbw" name="saveOrUpdate" visibility="public">
+          <ownedParameter xmi:id="_wv_74ULHEeaMkIj4srOLbw" name="address" type="_wuQ2gELHEeaMkIj4srOLbw"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_wv_74kLHEeaMkIj4srOLbw" name="delete" visibility="public">
+          <ownedParameter xmi:id="_wv_740LHEeaMkIj4srOLbw" name="adress" type="_wuQ2gELHEeaMkIj4srOLbw"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_wv_75ELHEeaMkIj4srOLbw" name="findAll" visibility="public">
+          <ownedParameter xmi:id="_wv_75ULHEeaMkIj4srOLbw" name="userId">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_wv_75kLHEeaMkIj4srOLbw" name="return" type="_wuMlEkLHEeaMkIj4srOLbw" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_wwAi8ELHEeaMkIj4srOLbw" name="find" visibility="public">
+          <ownedParameter xmi:id="_wwAi8ULHEeaMkIj4srOLbw" name="id">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_wwAi8kLHEeaMkIj4srOLbw" name="return" type="_wuQ2gELHEeaMkIj4srOLbw" direction="return"/>
+        </ownedOperation>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_wuMlGELHEeaMkIj4srOLbw" name="model">
+      <packagedElement xmi:type="uml:DataType" xmi:id="_wuMlGULHEeaMkIj4srOLbw" name="UserInfo"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_wuNMJ0LHEeaMkIj4srOLbw" name="BookNum"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_wuNzMELHEeaMkIj4srOLbw" name="BookInfo"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_wuNzMULHEeaMkIj4srOLbw" name="CollectInfo"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_wuQPcELHEeaMkIj4srOLbw" name="ReviewInfo"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_wuQ2gELHEeaMkIj4srOLbw" name="Address"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_wuRdkELHEeaMkIj4srOLbw" name="OrderInfo"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_wuSrsELHEeaMkIj4srOLbw" name="ShoppingCart"/>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_wuMlEELHEeaMkIj4srOLbw" name="java">
+    <packagedElement xmi:type="uml:Package" xmi:id="_wuMlEULHEeaMkIj4srOLbw" name="util">
+      <packagedElement xmi:type="uml:DataType" xmi:id="_wuMlEkLHEeaMkIj4srOLbw" name="List"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_wuWWEELHEeaMkIj4srOLbw" name="LinkedList"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_wuSEoELHEeaMkIj4srOLbw" name="io">
+      <packagedElement xmi:type="uml:DataType" xmi:id="_wuSEoULHEeaMkIj4srOLbw" name="Serializable"/>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_wuMlE0LHEeaMkIj4srOLbw" name="org">
+    <packagedElement xmi:type="uml:Package" xmi:id="_wuMlFELHEeaMkIj4srOLbw" name="springframework">
+      <packagedElement xmi:type="uml:Package" xmi:id="_wuMlFULHEeaMkIj4srOLbw" name="transaction">
+        <packagedElement xmi:type="uml:Package" xmi:id="_wuMlFkLHEeaMkIj4srOLbw" name="annotation">
+          <packagedElement xmi:type="uml:DataType" xmi:id="_wuMlF0LHEeaMkIj4srOLbw" name="Transactional"/>
+        </packagedElement>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_wuNMJULHEeaMkIj4srOLbw" name="stereotype">
+        <packagedElement xmi:type="uml:DataType" xmi:id="_wuNMJkLHEeaMkIj4srOLbw" name="Repository"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_wuOaQULHEeaMkIj4srOLbw" name="beans">
+        <packagedElement xmi:type="uml:Package" xmi:id="_wuOaQkLHEeaMkIj4srOLbw" name="factory">
+          <packagedElement xmi:type="uml:Package" xmi:id="_wuOaQ0LHEeaMkIj4srOLbw" name="annotation">
+            <packagedElement xmi:type="uml:DataType" xmi:id="_wuOaRELHEeaMkIj4srOLbw" name="Autowired"/>
+          </packagedElement>
+        </packagedElement>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_wuOaRULHEeaMkIj4srOLbw" name="dao">
+        <packagedElement xmi:type="uml:DataType" xmi:id="_wuOaRkLHEeaMkIj4srOLbw" name="DataAccessException"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_wuOaR0LHEeaMkIj4srOLbw" name="orm">
+        <packagedElement xmi:type="uml:Package" xmi:id="_wuOaSELHEeaMkIj4srOLbw" name="hibernate4">
+          <packagedElement xmi:type="uml:Package" xmi:id="_wuOaSULHEeaMkIj4srOLbw" name="support">
+            <packagedElement xmi:type="uml:DataType" xmi:id="_wuPBUELHEeaMkIj4srOLbw" name="HibernateDaoSupport"/>
+          </packagedElement>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_wuNMI0LHEeaMkIj4srOLbw" name="hibernate">
+      <packagedElement xmi:type="uml:DataType" xmi:id="_wuNMJELHEeaMkIj4srOLbw" name="SessionFactory"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_wuOaQELHEeaMkIj4srOLbw" name="Session"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_wuT50kLHEeaMkIj4srOLbw" name="FlushMode"/>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_wuNMIELHEeaMkIj4srOLbw" name="javax">
+    <packagedElement xmi:type="uml:Package" xmi:id="_wuNMIULHEeaMkIj4srOLbw" name="annotation">
+      <packagedElement xmi:type="uml:DataType" xmi:id="_wuNMIkLHEeaMkIj4srOLbw" name="Resource"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_wuT50ELHEeaMkIj4srOLbw" name="transaction">
+      <packagedElement xmi:type="uml:DataType" xmi:id="_wuT50ULHEeaMkIj4srOLbw" name="Transactional"/>
+    </packagedElement>
+  </packagedElement>
+</uml:Model>
